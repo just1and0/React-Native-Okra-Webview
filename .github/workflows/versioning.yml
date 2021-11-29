@@ -23,3 +23,5 @@ jobs:
 
     - name: npm-versioning-action
       run: ./scripts/moveFiles.sh
+       env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} 
