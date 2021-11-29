@@ -28,7 +28,6 @@
     ]
   },
   "dependencies": {
-    "react-native-webview": "*",
-    "semantic-release": "^18.0.1"
+    "react-native-webview": "*"
   }
 }
