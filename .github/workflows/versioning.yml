@@ -1,9 +1,4 @@
-name: versioning
-
-on:
-  push:
-    branches:
-      - main
+name: Package Project
       
 jobs:
   build:
@@ -22,13 +17,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: npm-versioning-action
-      # You may pin to the exact commit or the version.
-      # uses: pengyanb/npm-versioning-action@2fbc8b7d23a499c51ba667b018ea281796ffb901
-      uses: pengyanb/npm-versioning-action@v1
-      with:
-        # release branch name, which semantic version is generated without suffix
-        release-branch: main
-        # path to package.json file
-        package-json-path: ./package.json
-        # update package.json version after version is generated
-        update-version:  true
+       run: npm run patch
