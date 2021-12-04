@@ -7,14 +7,14 @@ Okra’s API empowers companies and developers to build products with seamless a
 
 ![alt text](https://files.readme.io/41dcda7-react-native-black.svg)
 
-React Native SDK for implementing the OkraJS widget - OkraJS is a safe and secure web drop-in module and this library provides a front-end web (also available in [iOS](https://github.com/okraHQ/okra-ios-sdk) and [Android](https://github.com/okraHQ/okra-android-sdk)) SDK for [account authentication](https://docs.okra.ng/docs/widget-properties) and [payment initiation](https://docs.okra.ng/docs/creating-a-charge) for each bank that Okra [supports](https://docs.okra.ng/docs/bank-coverage). 
+React Native SDK for implementing the OkraJS widget - OkraJS is a safe and secure web drop-in module and this library provides a front-end web (also available in [iOS](https://github.com/okraHQ/okra-ios-sdk) and [Android](https://github.com/okraHQ/okra-android-sdk)) SDK for [account authentication](https://docs.okra.ng/docs/widget-properties) and [payment initiation](https://docs.okra.ng/docs/creating-a-charge) for each bank that Okra [supports](https://docs.okra.ng/docs/bank-coverage).
 
 ## Try the demo
 Checkout the [widget flow](https://okra.ng/) to view how the Okra Widget works. *Click "See How it Works"*
 
 ## Before getting started
 - Checkout our [get started guide](https://docs.okra.ng/docs/get-started-with-okra) to create your developer account and retrieve your Client Token, API Keys, and Private Keys.
-- Create a [sandbox customer](https://docs.okra.ng/docs/creating-sandbox-customers), so you can get connecting immediately. 
+- Create a [sandbox customer](https://docs.okra.ng/docs/creating-sandbox-customers), so you can get connecting immediately.
 
 ## buildWithShortURL
 - If you are using the `buildWithShortURL` version, you will first need to [create a link](https://docs.okra.ng/docs/widget-customization) on your dashboard, and use the `short url` returend at the end of the creation flow.
@@ -56,14 +56,14 @@ For React Native based application import it and use
 
 import React from 'react';
 import {
-  Alert, 
-  SafeAreaView, 
-  StatusBar, 
+  Alert,
+  SafeAreaView,
+  StatusBar,
   useColorScheme,
   View,
 } from 'react-native';
 
-import Okra from 'okra-react-native-sdk';
+import { Okra } from 'react-native-okra-webview';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -104,18 +104,18 @@ For others, just use
 
  import React, { useState } from 'react';
  import {
-   Alert, 
-   SafeAreaView, 
-   StatusBar,  
+   Alert,
+   SafeAreaView,
+   StatusBar,
    useColorScheme,
    View,
  } from 'react-native';
- 
-import Okra from 'okra-react-native-sdk';
- 
+
+import { Okra } from 'react-native-okra-webview';
+
  const App = () => {
    const isDarkMode = useColorScheme() === 'dark';
- 
+
    return (
      <SafeAreaView style={{flex:1}}>
        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -137,7 +137,7 @@ import Okra from 'okra-react-native-sdk';
      </SafeAreaView>
    );
  };
- 
+
  export default App;
 ```
 
@@ -154,16 +154,16 @@ import Okra from 'okra-react-native-sdk';
 |  `payment`            | `Booelan`      | false               |                     | Whether you want to initiate a payment (https://docs.okra.ng/docs/payments)
 |  `charge `            | `Object`       | false               |                     | Payment charge opject (https://docs.okra.ng/docs/creating-a-charge)
 |  `products`           | `Array`        | true                | `['Auth']`          | The Okra products you want to use with the widget.
-|  `logo `              | `String(URL)`  | false               | Okra's Logo         | 
-|  `name `              | `String`       | false               | Your Company's name | Name on the widget 
-|  `color`              | `HEX   `       | false               | #3AB795             | Theme on the widget 
+|  `logo `              | `String(URL)`  | false               | Okra's Logo         |
+|  `name `              | `String`       | false               | Your Company's name | Name on the widget
+|  `color`              | `HEX   `       | false               | #3AB795             | Theme on the widget
 |  `limit`              | `Number`       | false               | 24                  | Statement length
 |  `filter`             | `Object`       | false               |                     | Filter for widget
 |  `isCorporate`        | `Boolen`       | false               | `false`             | Corporate or Individual account
 |  `connectMessage`     | `String`       | false               |                     | Instruction to connnect account
 |  `widget_success`     | `String`       | false               |                     | Widget Success Message
 |  `widget_failed`      | `String`       | false               |                     | Widget Failed Message
-|  `callback_url`       | `String(Url)`  | false               |                     | 
+|  `callback_url`       | `String(Url)`  | false               |                     |
 |  `currency`           | `String`       | false               | NGN                 | Wallet to bill
 |  `exp`                | `Date`         | false               | Won't expire        | Expirary date of widget
 |  `options`            | `Object`       | false               |                     | You can pass a object custom values eg id
@@ -187,6 +187,8 @@ View a complete list of customizable options [here](https://docs.okra.ng/docs/wi
 ## Done connecting?
 Checkout our [API Overiview](https://docs.okra.ng/docs/api-overview) and see how to use the data you've received and [other products](https://docs.okra.ng/docs/selfie-verification) you can use to create more personalized experiences for your customers!
 
-## Not a developer? 
+## Not a developer?
 Get started without writing a single line of code, Try our App Builder! [Click here to get started](https://dash.okra.ng/link-builder)
- 
+
+## Huge Thanks & Credits
+(Bob)[https://github.com/callstack/react-native-builder-bob]
