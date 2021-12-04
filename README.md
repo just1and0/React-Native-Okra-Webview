@@ -191,4 +191,4 @@ Checkout our [API Overiview](https://docs.okra.ng/docs/api-overview) and see how
 Get started without writing a single line of code, Try our App Builder! [Click here to get started](https://dash.okra.ng/link-builder)
 
 ## Huge Thanks & Credits
-(Bob)[https://github.com/callstack/react-native-builder-bob]
+(https://github.com/callstack/react-native-builder-bob)[Bob RN package template]
