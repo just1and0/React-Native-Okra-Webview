@@ -1,4 +1,4 @@
-name: Package Project
+name: Release
 
 on:
   push:
