@@ -197,3 +197,7 @@ Get started without writing a single line of code, Try our App Builder! [Click h
 ## Contributions
 
 Want to help make this package even more awesome? feel free to send in your PR to dev branch and we'd review it and ensure it gets added to the next release 😊 
+
+## Licensing
+
+This project is licensed under MIT license.
