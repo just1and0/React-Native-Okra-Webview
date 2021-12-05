@@ -3,8 +3,8 @@ name: Release
 on:
   push:
     branches:
-      - main
-      
+      - dev
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +27,3 @@ jobs:
       
     - name: Release new version
       run: npm run release
-      
-      
-

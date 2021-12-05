@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { View, Modal, Text, Pressable, SafeAreaView, ActivityIndicator } from 'react-native'
-import { OkraBuildWithOptionsProps } from './types';
+import { View, Modal, SafeAreaView, ActivityIndicator, TouchableOpacity, Text } from 'react-native'
+import { OkraBuildWithShortUrlProps } from './types';
 import { WebView, WebViewNavigation } from 'react-native-webview';
-import { OptionWebViewConfig } from './webview-config';
+import { ShortUrlWebViewConfig } from './webview-config';
 
-const BuildWithOptions = (props: OkraBuildWithOptionsProps) => {
-    const { name, env, app_id, okraKey, token, products, color, logo, payment, filter, isCorporate, limit, callback_url, connectMessage,currency,  widget_success, widget_failed, exp, onSuccess, onClose, onError, BeforeClose } = props;
+const BuildWithShortUrl = (props: OkraBuildWithShortUrlProps) => {
+    const { short_url, onSuccess, onClose, onError, BeforeClose } = props;
 
     const [toggleModal, setToggleModal] = useState(true)
-    const [isLoading, setisLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     const onTransactionSuccess = (res: any) => {
+        setToggleModal(false)
+
         onSuccess({ status: 'options success', res })
         setToggleModal(false)
     }
@@ -19,7 +21,6 @@ const BuildWithOptions = (props: OkraBuildWithOptionsProps) => {
         onClose({ status: 'options close' })
         setToggleModal(false)
     }
-
 
     const onTransactionError = (res: any) => {
         onError && onError({ status: 'options error', res })
@@ -53,9 +54,9 @@ const BuildWithOptions = (props: OkraBuildWithOptionsProps) => {
                 setToggleModal(false)
                 break;
 
-
             default:
                 onTransactionClose()
+                setToggleModal(false)
                 break;
         }
     };
@@ -73,18 +74,17 @@ const BuildWithOptions = (props: OkraBuildWithOptionsProps) => {
             <Modal visible={toggleModal} animationType={'slide'}>
                 <SafeAreaView style={{ flex: 1 }}>
                     <WebView
-                        source={{ html: OptionWebViewConfig({ name, env, okraKey, token, products, color, logo, payment, filter, isCorporate, limit, callback_url, connectMessage,currency,  widget_success, widget_failed, exp  }) }}
+                        source={{ html: ShortUrlWebViewConfig({ short_url }) }}
                         onMessage={(e) => {
                             messageReceived(e.nativeEvent?.data);
                         }}
-                        onLoadStart={() => setisLoading(true)}
-                        onLoadEnd={() => setisLoading(false)}
+                        onLoadStart={() => setIsLoading(true)}
+                        onLoadEnd={() => setIsLoading(false)}
                         onNavigationStateChange={onNavigationStateChange}
                         cacheEnabled={false}
                         cacheMode={'LOAD_NO_CACHE'}
                     />
-
-                    <View style={{ backgroundColor: color? color : 'rgb(58, 183, 149)', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 15, flexDirection: 'row' }}>
+                    <View style={{ backgroundColor: 'rgb(58, 183, 149)', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 15, flexDirection: 'row' }}>
                         <View style={{ flex: 1 }}>
                             {isLoading && (
                                 <View>
@@ -93,18 +93,18 @@ const BuildWithOptions = (props: OkraBuildWithOptionsProps) => {
                             )}
                         </View>
                         <View style={{ flex: 3, paddingHorizontal: 15 }}>
-                            <Pressable onPress={() => onTransactionClose()}>
+                            <TouchableOpacity onPress={() => onTransactionClose()}>
                                 <Text style={{ color: 'white', fontWeight: 'bold', alignSelf: 'flex-end' }}>
                                     close
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
                     </View>
-
                 </SafeAreaView>
             </Modal>
+
         </View>
     )
 }
 
-export default BuildWithOptions;
+export default BuildWithShortUrl;
