@@ -36,6 +36,10 @@
     "ios",
     "android"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "repository": "https://github.com/just1and0/react-native-okra-webview",
   "author": "Oluwatobi Shokunbi <ayoshokz@gmail.com> (https://github.com/just1and0)",
   "license": "MIT",
