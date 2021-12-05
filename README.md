@@ -190,5 +190,10 @@ Checkout our [API Overiview](https://docs.okra.ng/docs/api-overview) and see how
 ## Not a developer?
 Get started without writing a single line of code, Try our App Builder! [Click here to get started](https://dash.okra.ng/link-builder)
 
-## Huge Thanks & Credits
-(https://github.com/callstack/react-native-builder-bob)[Bob RN package template]
+## Thanks & Credits
+- (Bob RN package template)[https://github.com/callstack/react-native-builder-bob]
+- (okraHQ/okra-react-native docs)[https://github.com/okraHQ/okra-react-native/blob/master/README.md]
+
+## Contributions
+
+Want to help make this package even more awesome? feel free to send in your PR to dev branch and we'd review it and ensure it gets added to the next release 😊 
