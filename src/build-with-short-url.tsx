@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Modal, SafeAreaView, ActivityIndicator, TouchableOpacity, Text } from 'react-native'
+import { View, Modal, SafeAreaView, ActivityIndicator, TouchableOpacity, Text, Alert } from 'react-native'
 import { OkraBuildWithShortUrlProps } from './types';
 import { WebView, WebViewNavigation } from 'react-native-webview';
 import { ShortUrlWebViewConfig } from './webview-config';
@@ -11,25 +11,45 @@ const BuildWithShortUrl = (props: OkraBuildWithShortUrlProps) => {
     const [isLoading, setIsLoading] = useState(true);
 
     const onTransactionSuccess = (res: any) => {
-        setToggleModal(false)
 
         onSuccess({ status: 'options success', res })
-        setToggleModal(false)
+
+    }
+
+    const onTransactionCloseConfirmation = () => {
+        Alert.alert(
+            "End Transaction",
+            "You are about to end this transaction, Are you sure you want to do this?",
+            [
+                {
+                    text: "No",
+                    onPress: () => onTransactionClose()
+                },
+                {
+                    text: "Yes",
+                    onPress: () => { onTransactionClose(), setToggleModal(false) },
+                    style: "cancel",
+                },
+            ],
+            {
+                cancelable: true
+            }
+        );
     }
 
     const onTransactionClose = () => {
         onClose({ status: 'options close' })
-        setToggleModal(false)
+
     }
 
     const onTransactionError = (res: any) => {
         onError && onError({ status: 'options error', res })
-        setToggleModal(false)
+
     }
 
     const onTransactionBeforeClose = () => {
         BeforeClose && BeforeClose()
-        setToggleModal(false)
+
     }
 
     const messageReceived = (data: string) => {
@@ -46,17 +66,14 @@ const BuildWithShortUrl = (props: OkraBuildWithShortUrlProps) => {
 
             case 'option error':
                 onTransactionError(webResponse)
-                setToggleModal(false)
                 break;
 
             case 'option before close':
-                onTransactionBeforeClose()
-                setToggleModal(false)
+                onTransactionBeforeClose() 
                 break;
 
             default:
-                onTransactionClose()
-                setToggleModal(false)
+                onTransactionClose() 
                 break;
         }
     };
@@ -93,7 +110,7 @@ const BuildWithShortUrl = (props: OkraBuildWithShortUrlProps) => {
                             )}
                         </View>
                         <View style={{ flex: 3, paddingHorizontal: 15 }}>
-                            <TouchableOpacity onPress={() => onTransactionClose()}>
+                            <TouchableOpacity onPress={() => onTransactionCloseConfirmation()}>
                                 <Text style={{ color: 'white', fontWeight: 'bold', alignSelf: 'flex-end' }}>
                                     close
                                 </Text>
