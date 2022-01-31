@@ -63,7 +63,7 @@ const OptionWebViewConfig = (props: OptionWebViewConfigProps) => {
   let setwidget_success = props.widget_success ? `${props.widget_success}` : `Your account was linked successfully with ${props.name}`;
   let setwidget_failed = props.widget_failed ? `${props.widget_failed}` : `Something went wrong while linking your account to ${props.name}`;
   let setExp = props.exp ? `${props.exp}` : null;
-  let setCurrency = props.currency ? `${props.currency}` : null;
+  let setCurrency = props.currency ? `${props.currency}` : 'NGN';
   let setLimit = props.limit ? `${props.limit}` : null;
 
   return `   
