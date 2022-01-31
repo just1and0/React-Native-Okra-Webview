@@ -1,6 +1,6 @@
 {
   "name": "react-native-okra-webview",
-  "version": "0.0.9",
+  "version": "0.1.9",
   "description": "Official Okra SDK for React Native/Expo applications. Don't forget to star ✨",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
