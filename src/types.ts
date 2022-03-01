@@ -24,7 +24,6 @@ export interface OkraBuildWithOptionsProps {
   onClose: (e: any) => void;
   BeforeClose?: () => void;
   onError?: (e:any) => void;
-  onEvent?: (e:any) => void;
 
 }
 
@@ -34,7 +33,6 @@ export interface OkraBuildWithShortUrlProps {
   onClose: (e: any) => void;
   BeforeClose?: () => void;
   onError?: (e:any) => void;
-  onEvent?: (e:any) => void;
 }
 
 export interface ShortUrlWebViewConfigProps {
