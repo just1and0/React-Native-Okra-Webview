@@ -171,7 +171,7 @@ import { Okra } from 'react-native-okra-webview';
 |  `onClose`            | `Function`     | false               |                     | Action to perform if widget is closed
 |  `onError`            | `Function`     | false               |                     | Action to perform on widget Error
 |  `BeforeClose`        | `Function`     | false               |                     | Action to perform before widget close
-
+|  `onEvent`            | `Function`     | false               |                     | Action to perform on widget event
 View a complete list of customizable options [here](https://docs.okra.ng/docs/widget-properties)
 
 ## Okra.buildWithShortUrl Options
@@ -183,6 +183,7 @@ View a complete list of customizable options [here](https://docs.okra.ng/docs/wi
 |  `onClose`            | `Function`     | false               | Action to perform if widget is closed
 |  `onError`            | `Function`     | false               | Action to perform on widget Error
 |  `BeforeClose`        | `Function`     | false               | Action to perform before widget close
+|  `onEvent`            | `Function`     | false               |                     | Action to perform on widget event
 
 ## Done connecting?
 Checkout our [API Overiview](https://docs.okra.ng/docs/api-overview) and see how to use the data you've received and [other products](https://docs.okra.ng/docs/selfie-verification) you can use to create more personalized experiences for your customers!

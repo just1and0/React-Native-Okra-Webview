@@ -5,7 +5,7 @@ import { WebView, WebViewNavigation } from 'react-native-webview';
 import { OptionWebViewConfig } from './webview-config';
 
 const BuildWithOptions = (props: OkraBuildWithOptionsProps) => {
-    const { name, env, okraKey, token, products, color, logo, payment, filter, isCorporate, limit, callback_url, connectMessage, currency, widget_success, widget_failed, exp, onSuccess, onClose, onError, BeforeClose } = props;
+    const { name, env, okraKey, token, products, color, logo, payment, filter, isCorporate, limit, callback_url, connectMessage, currency, widget_success, widget_failed, exp, onSuccess, onClose, onError, BeforeClose, onEvent } = props;
 
     const [toggleModal, setToggleModal] = useState(true)
     const [isLoading, setisLoading] = useState(true);
@@ -67,6 +67,10 @@ const BuildWithOptions = (props: OkraBuildWithOptionsProps) => {
             case 'option before close':
                 onTransactionBeforeClose()
                 break;
+
+            case 'option event':
+                onEvent &&  onEvent(webResponse);
+                break
 
 
             default:

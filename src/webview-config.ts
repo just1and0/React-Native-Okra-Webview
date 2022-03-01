@@ -34,7 +34,11 @@ const ShortUrlWebViewConfig = (props: ShortUrlWebViewConfigProps) => `
                       onError: function(data){
                         let response = {event:'option error', data}
                         window.ReactNativeWebView.postMessage(JSON.stringify(response))
-                    }
+                    },
+                    onEvent: function(data){
+                      let response = {event:'option event', data}
+                      window.ReactNativeWebView.postMessage(JSON.stringify(response))
+                  }
 
                     })
                 }
@@ -117,7 +121,11 @@ const OptionWebViewConfig = (props: OptionWebViewConfigProps) => {
                 onError: function(data){
                   let response = {event:'option error', data}
                   window.ReactNativeWebView.postMessage(JSON.stringify(response))
-              }
+              },
+              onEvent: function(data){
+                let response = {event:'option event', data}
+                window.ReactNativeWebView.postMessage(JSON.stringify(response))
+            }
               })
           }
 
