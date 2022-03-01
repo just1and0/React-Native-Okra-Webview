@@ -69,7 +69,7 @@ const BuildWithOptions = (props: OkraBuildWithOptionsProps) => {
                 break;
 
             case 'option event':
-                onEvent &&  onEvent(webResponse);
+                onEvent(webResponse);
                 break
 
 

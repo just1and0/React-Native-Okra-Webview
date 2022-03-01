@@ -5,7 +5,7 @@ import { WebView, WebViewNavigation } from 'react-native-webview';
 import { ShortUrlWebViewConfig } from './webview-config';
 
 const BuildWithShortUrl = (props: OkraBuildWithShortUrlProps) => {
-    const { short_url, onSuccess, onClose, onError, BeforeClose } = props;
+    const { short_url, onSuccess, onClose, onError, BeforeClose, onEvent } = props;
 
     const [toggleModal, setToggleModal] = useState(true)
     const [isLoading, setIsLoading] = useState(true);
@@ -69,11 +69,15 @@ const BuildWithShortUrl = (props: OkraBuildWithShortUrlProps) => {
                 break;
 
             case 'option before close':
-                onTransactionBeforeClose() 
+                onTransactionBeforeClose()
                 break;
 
+            case 'option event':
+                onEvent && onEvent(webResponse);
+                break
+
             default:
-                onTransactionClose() 
+                onTransactionClose()
                 break;
         }
     };

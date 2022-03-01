@@ -171,6 +171,7 @@ import { Okra } from 'react-native-okra-webview';
 |  `onClose`            | `Function`     | false               |                     | Action to perform if widget is closed
 |  `onError`            | `Function`     | false               |                     | Action to perform on widget Error
 |  `BeforeClose`        | `Function`     | false               |                     | Action to perform before widget close
+|  `onEvent`            | `Function`     | false               |                     | Action to perform on widget event
 
 View a complete list of customizable options [here](https://docs.okra.ng/docs/widget-properties)
 
@@ -183,6 +184,7 @@ View a complete list of customizable options [here](https://docs.okra.ng/docs/wi
 |  `onClose`            | `Function`     | false               | Action to perform if widget is closed
 |  `onError`            | `Function`     | false               | Action to perform on widget Error
 |  `BeforeClose`        | `Function`     | false               | Action to perform before widget close
+|  `onEvent`            | `Function`     | false               |                     | Action to perform on widget event
 
 ## Done connecting?
 Checkout our [API Overiview](https://docs.okra.ng/docs/api-overview) and see how to use the data you've received and [other products](https://docs.okra.ng/docs/selfie-verification) you can use to create more personalized experiences for your customers!
@@ -190,14 +192,5 @@ Checkout our [API Overiview](https://docs.okra.ng/docs/api-overview) and see how
 ## Not a developer?
 Get started without writing a single line of code, Try our App Builder! [Click here to get started](https://dash.okra.ng/link-builder)
 
-## Thanks & Credits
-- (Bob RN package template)[https://github.com/callstack/react-native-builder-bob]
-- (okraHQ/okra-react-native docs)[https://github.com/okraHQ/okra-react-native/blob/master/README.md]
-
-## Contributions
-
-Want to help make this package even more awesome? feel free to send in your PR to dev branch and we'd review it and ensure it gets added to the next release 😊 
-
-## Licensing
-
-This project is licensed under MIT license.
+## Huge Thanks & Credits
+(Bob)[https://github.com/callstack/react-native-builder-bob]
