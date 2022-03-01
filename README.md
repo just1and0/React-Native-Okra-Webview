@@ -172,6 +172,8 @@ import { Okra } from 'react-native-okra-webview';
 |  `onError`            | `Function`     | false               |                     | Action to perform on widget Error
 |  `BeforeClose`        | `Function`     | false               |                     | Action to perform before widget close
 |  `onEvent`            | `Function`     | false               |                     | Action to perform on widget event
+
+
 View a complete list of customizable options [here](https://docs.okra.ng/docs/widget-properties)
 
 ## Okra.buildWithShortUrl Options
